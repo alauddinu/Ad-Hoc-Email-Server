@@ -131,7 +131,7 @@ router.post('/mailbox/autocomplete', (req, res) => {
 });
 
 /**
- * returns a list of mail metadata bojects in a specific mailbox
+ * returns a list of mail metadata ojects in a specific mailbox
  */
 router.get('/mailbox/:mailbox/email', (req, res, next) => {
   req.db.collection('mailboxes').findOne({'name': req.params.mailbox}, function (err, mailbox) {

@@ -1,4 +1,4 @@
-Sitemap: https://www.ahem.email/sitemap.xml
+Sitemap: https://www.alamails.xyz/sitemap.xml
 User-agent: *
 Disallow: /mailbox/*
 Disallow: /api/*

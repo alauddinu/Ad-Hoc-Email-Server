@@ -1,14 +1,14 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "This is the documentation for the [AHEM Ad Hoc Disposable Temporary Email service API](https://www.ahem.email).  AHEM is a free temp mail service that allows recieving of ad-hoc emails to a mailbox of your choice. No  registration or any other preparation is needed. Just send an email, and it's there.<br> Its simple and intuitive api makes it a perfect tool for testing and automation of any product that use email.",
+    "description": "This is the documentation for the [AHEM Ad Hoc Disposable Temporary Email service API](https://www.alamails.xyz). AHEM is a free temp mail service that allows recieving of ad-hoc emails to a mailbox of your choice. No registration or any other preparation is needed. Just send an email, and it's there.<br> Its simple and intuitive api makes it a perfect tool for testing and automation of any product that use email.",
     "version": "1.0.0",
-    "title": "AHEM - Ad Hoc Email Service",
-    "termsOfService": "https://www.ahem.email/privacy"
+    "title": "Ad Hoc Email Service",
+    "termsOfService": "https://www.alamails.xyz/privacy"
   },
   "servers": [
     {
-      "url": "https://www.ahem.email/api"
+      "url": "https://www.alamails.xyz/api"
     }
   ],
   "tags": [
@@ -90,7 +90,7 @@
         "properties": {
           "serverBaseUri": {
             "type": "string",
-            "example": "https://www.ahem.email"
+            "example": "https://www.alamails.xyz"
           },
           "emailDeleteInterval": {
             "type": "integer",
@@ -105,8 +105,8 @@
             "items": {
               "type": "string",
               "example": [
-                "ahem.email",
-                "ahem-email.com"
+                "alamails.xyz",
+                "alamails.com"
               ]
             }
           },

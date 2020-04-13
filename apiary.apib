@@ -1,9 +1,9 @@
 FORMAT: 1A
-HOST: https://www.ahem.email
+HOST: https://www.alamails.xyz
 
 # AHEM - Ad Hoc Email
 
-[AHEM](https://www.ahem.email) is an ad hoc disposable and temporary email service. It allows receiving email at an ad-hoc created email, created on the fly when an email is received by our server.
+[AHEM](https://www.alamails.xyz) is an ad hoc disposable and temporary email service. It allows receiving email at an ad-hoc created email, created on the fly when an email is received by our server.
 Using the AHEM service allows you to prevent spam to your real email, and to test products that send email as part of their lifecycle.
 
 
@@ -29,13 +29,12 @@ Use the token in the Authorization header as a Bearer token.
 + Response 200 (application/json)
 
         {
-            "serverBaseUri":"https://www.ahem.email",
+            "serverBaseUri":"https://www.alamails.xyz",
             "emailDeleteInterval":86400,
             "emailDeleteAge":7200,
             "allowedDomains":[
-                "ahem.email",
-                "mail.ahem.email",
-                "ahem-email.com"
+                "alamails.xyz",
+                "alamails.com"
                 ],
             "allowAutocomplete":false,
             "customText": null
@@ -100,8 +99,8 @@ Use the token in the Authorization header as a Bearer token.
             "success": false,
             "message": "No token provided."
         }
-        
-        
+
+
 ## Email [/api/mailbox/{mailboxName}/email/{emailId}]
 
 ### Get an email's content [GET]
@@ -280,7 +279,7 @@ Use the token in the Authorization header as a Bearer token.
         {
             "error": "error details"
         }
-        
+
 ### Update an Email's metadata [PATCH]
 
 + Parameters
@@ -298,7 +297,7 @@ Use the token in the Authorization header as a Bearer token.
             {
                 "isRead": true
             }
-    
+
 
 + Response 200 (application/json)
 

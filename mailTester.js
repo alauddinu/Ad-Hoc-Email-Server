@@ -21,7 +21,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
       // default message fields
 
       // sender info
-      from: 'AHEM Test main! <no-reply@ahem.email>',
+      from: 'AHEM Test main! <no-reply@alamails.xyz>',
       headers: {
       }
     }
