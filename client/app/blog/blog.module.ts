@@ -11,7 +11,6 @@ import {BlogService} from './blog.service';
 import {MatDividerModule} from '@angular/material/divider';
 import {HighlightJsModule} from 'ngx-highlight-js';
 import { HowToSetUpYourOwnDisposableMailServerComponent } from './posts/how-to-set-up-your-own-disposable-mail-server/how-to-set-up-your-own-disposable-mail-server.component';
-import { RunAhemOnDockerComponent } from './posts/run-ahem-on-docker/run-ahem-on-docker.component';
 
 @NgModule({
   imports: [
@@ -25,6 +24,6 @@ import { RunAhemOnDockerComponent } from './posts/run-ahem-on-docker/run-ahem-on
   providers: [
     BlogService
   ],
-  declarations: [BlogComponent, BlogEntryComponent, BlogPostPageComponent, HowToSetUpYourOwnDisposableMailServerComponent, RunAhemOnDockerComponent]
+  declarations: [BlogComponent, BlogEntryComponent, BlogPostPageComponent, HowToSetUpYourOwnDisposableMailServerComponent]
 })
 export class BlogModule { }
