@@ -22,8 +22,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {DeviceService} from './services/device.service';
 import {ApiService} from './services/api.service';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+
+//import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+//import { library } from '@fortawesome/fontawesome-svg-core';
+
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
 import { faBars, faTrash, faDove, faPaperclip, faUserSecret, faLaptopCode, faTv, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faMeh, faEnvelope, faEnvelopeOpen, faTrashAlt, faClock, faPaperPlane, faFile,
   faFileArchive, faFileAudio, faFileCode, faFileExcel, faFileImage, faFilePdf, faFilePowerpoint,
@@ -33,18 +37,15 @@ import {HomeModule} from '../home/home.module';
 import {ConfigService} from './services/config.service';
 import {DurationPipe, MomentModule} from 'ngx-moment';
 import {TokenInterceptor} from './services/token-interceptor';
-import { SeoService } from './services/seo.service';
+import {SeoService} from './services/seo.service';
 import {Angulartics2Module} from 'angulartics2';
 import {AdsenseModule} from 'ng2-adsense';
+import {library} from "@fortawesome/fontawesome-svg-core";
+// import {Library, library} from "@fortawesome/fontawesome-svg-core";
 
 export function initializeApp(ahemProperties: ConfigService) {
   return () => ahemProperties.load();
 }
-
-
-library.add(faMeh, faEnvelope, faEnvelopeOpen, faBars, faTrash, faTrashAlt, faClock, faPaperPlane, faDove, faPaperclip, faFile,
-  faFileArchive, faFileAudio, faFileCode, faFileExcel, faFileImage, faFilePdf, faFilePowerpoint,
-  faFileVideo, faFileWord, faUserSecret, faLaptopCode, faTv, faMobileAlt);
 
 @NgModule({
   declarations: [
@@ -102,4 +103,10 @@ library.add(faMeh, faEnvelope, faEnvelopeOpen, faBars, faTrash, faTrashAlt, faCl
     MatIconRegistry,
     DeviceService],
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faMeh, faEnvelope, faEnvelopeOpen, faBars, faTrash, faTrashAlt, faClock, faPaperPlane, faDove, faPaperclip, faFile,
+      faFileArchive, faFileAudio, faFileCode, faFileExcel, faFileImage, faFilePdf, faFilePowerpoint,
+      faFileVideo, faFileWord, faUserSecret, faLaptopCode, faTv, faMobileAlt);
+  }
+}
