@@ -51,24 +51,24 @@ function start(properties, db) {
   app.use(morgan(':remote-addr :remote-user :method :url HTTP/:http-version :status :res[content-length] - :response-time ms :xff',
     { 'stream': logger.stream }));
 
-// Set routes
+  // Set routes
   app.use('/api', api);
 
-// Server static files from /browser
-app.get('*.*', express.static(path.join(DIST_FOLDER, "browser")));
+  // Server static files from /browser
+  app.get('*.*', express.static(path.join(DIST_FOLDER, "browser")));
 
-// All regular browser angular folder
+  // All regular browser angular folder
   app.get('*', (req, res) => {
-    res.sendfile(path.join(DIST_FOLDER, "browser", "index.html"));
+    res.sendFile(path.join(DIST_FOLDER, "browser", "index.html"));
   });
 
-// error handler
+  // error handler
   app.use(function (err, req, res, next) {
     logger.error(err.message);
     res.status(500).send({error: err.name + ' | ' + err.message});
   });
 
-// delete emails every interval
+  // delete emails every interval
   setInterval(function () {
     logger.info('checking for emails older than ' + properties.emailDeleteAge + ' seconds');
     db.collection('emails').find({'timestamp': {$lt: (new Date().getTime() - (properties.emailDeleteAge * 1000))}},

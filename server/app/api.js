@@ -141,6 +141,7 @@ router.get('/mailbox/:mailbox/email', (req, res, next) => {
     if (!mailbox || mailbox.emails.length === 0) {
       return res.status(404).send({error: 'MAILBOX IS EMPTY!'});
     }
+    logger.info(mailbox.emails)
     res.status(200).send(mailbox.emails);
   });
 });
@@ -171,6 +172,7 @@ router.get('/mailbox/:mailbox/email/:emailId', (req, res) => {
       return res.status(500).json({error: err});
     }
     if(doc) {
+      logger.info(doc)
       return res.status(200).json(doc);
     } else {
       return res.status(404).json({ error: 'EMAIL NOT FOUND'});
@@ -190,6 +192,7 @@ router.patch('/mailbox/:mailbox/email/:emailId', (req, res) => {
     if (err) {
       return res.status(500).json({error: err});
     }
+    logger.info(result)
     return res.status(200).json(result);
   });
 });
@@ -207,7 +210,8 @@ router.delete('/mailbox/:mailbox/email/:emailId', (req, res) => {
       if(result.modifiedCount === 0) {
         return res.status(404).json({success: false, message: 'EMAIL NOT FOUND'});
       }
-      return res.json({success: true});
+      logger.info(result)
+      return res.status(204).json({success: true});
 
     }
   );
@@ -216,9 +220,10 @@ router.delete('/mailbox/:mailbox/email/:emailId', (req, res) => {
 router.delete('/mailbox/:mailbox', (req, res) => {
   req.db.collection('mailboxes').remove({'name': req.params.mailbox}, function(err, result) {
     if (err) {
-      return res.status(500).send({error: err, succes: false});
+      return res.status(500).send({error: err, success: false});
     }
-    return res.json({success: true});
+    logger.info(result)
+    return res.status(204).json({success: true});
   });
 });
 
