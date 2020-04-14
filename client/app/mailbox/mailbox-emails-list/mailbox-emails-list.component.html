@@ -15,7 +15,7 @@
 <!--        <ng-adsense *ngIf="this.deviceService.getPlatformWidth()>1024" class="email-list-adsense" [adSlot]="5324689158"></ng-adsense>-->
         <div class="emails-list">
           <div *ngFor='let email of emailList' (click)="clickedEmail(email)" class="ahem-email-list-item" [ngClass]="{'ahem-email-selected': email.isSelected }">
-            <app-email-info [emailInfo]="email"></app-email-info>
+            {{log(email | json)}}
             <app-email-info [emailInfo]="email"></app-email-info>
             <mat-divider></mat-divider>
           </div>

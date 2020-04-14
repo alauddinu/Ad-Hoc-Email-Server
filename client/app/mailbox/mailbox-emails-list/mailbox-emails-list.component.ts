@@ -113,4 +113,8 @@ export class MailboxEmailsListComponent implements OnInit, OnDestroy {
   navigateToMailbox() {
     this.router.navigateByUrl('mailbox/' + this.mailbox);
   }
+
+  log(val) {
+    console.log(val);
+  }
 }
