@@ -16,6 +16,7 @@
         <div class="emails-list">
           <div *ngFor='let email of emailList' (click)="clickedEmail(email)" class="ahem-email-list-item" [ngClass]="{'ahem-email-selected': email.isSelected }">
             <app-email-info [emailInfo]="email"></app-email-info>
+            <app-email-info [emailInfo]="email"></app-email-info>
             <mat-divider></mat-divider>
           </div>
         </div>
