@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
       },
       {
         title: 'Simple',
-        text: 'Using AHEM is always simple and free. Just send an email to [mailbox of your choice]@ahem.email and check your ' +
+        text: 'Using AHEM is always simple and free. Just send an email to [mailbox of your choice]@alamails.xyz and check your ' +
         'disposable mailbox.',
         iconName: 'dove',
         iconGroup: 'fas'
